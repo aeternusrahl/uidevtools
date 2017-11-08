@@ -1,0 +1,32 @@
+@import "variables";
+
+:host {
+  display: block;
+  height: 2rem;
+  position: relative;
+
+  text-transform: capitalize;
+  text-align: center;
+  background-color: darken($bgcolor-default, 10%);
+  border-bottom: 2px solid darken($bgcolor-default, 15%);
+
+  >.title {
+    @include title(1.25rem);
+    line-height: 2rem;
+  }
+
+  >.back-button {
+    position: absolute;
+    left: $padding-default * 2;
+    line-height: 2rem;
+    color: $color-default;
+
+    @include small-only {
+      >.back-text {
+        display: none;
+      }
+    }
+  }
+
+
+}

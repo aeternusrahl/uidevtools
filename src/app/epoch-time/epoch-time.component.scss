@@ -1,0 +1,15 @@
+@import "variables";
+
+.page-content {
+  @include standard-padding();
+
+  @include medium-up {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &>* {
+      flex-grow: 1;
+    }
+  }
+}

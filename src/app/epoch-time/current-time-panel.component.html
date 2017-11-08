@@ -1,0 +1,47 @@
+<div class="epoch-panel-header"><span class="title">Current Epoch Time</span></div>
+<div class="epoch-panel-body">
+  <div class="epoch-row">
+    <input type="text"
+           readonly
+           class="epoch-value"
+           value="{{seconds}}"
+           copyToClipboard
+           [attr.data-clipboard-text]="seconds"
+           title="Click to copy to clipboard!"
+           alt="Click to copy to clipboard!"/>
+    <span class="epoch-label">seconds</span>
+  </div>
+  <div class="epoch-row">
+    <input type="text"
+           readonly
+           class="epoch-value"
+           value="{{milliseconds}}"
+           copyToClipboard
+           [attr.data-clipboard-text]="milliseconds"
+           title="Click to copy to clipboard!"
+           alt="Click to copy to clipboard!"/>
+    <span class="epoch-label">milliseconds</span>
+  </div>
+  <div class="epoch-row">
+    <input type="text"
+           readonly
+           class="epoch-value"
+           value="{{isoTime}}"
+           copyToClipboard
+           [attr.data-clipboard-text]="isoTime"
+           title="Click to copy to clipboard!"
+           alt="Click to copy to clipboard!"/>
+    <span class="epoch-label">ISO 8601</span>
+  </div>
+  <div class="epoch-row">
+    <input type="text"
+           readonly
+           class="epoch-value"
+           value="{{localTime}}"
+           copyToClipboard
+           [attr.data-clipboard-text]="localTime"
+           title="Click to copy to clipboard!"
+           alt="Click to copy to clipboard!"/>
+    <span class="epoch-label">local date/time</span>
+  </div>
+</div>
