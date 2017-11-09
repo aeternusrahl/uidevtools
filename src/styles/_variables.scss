@@ -14,9 +14,12 @@ $color-default: #c2bdf2 !default;
 $color-title: lighten($color-default, 15%) !default;
 $color-subtitle: mix($color-default, $bgcolor-default, 70%) !default;
 
-$bgcolor-panel: lighten($bgcolor-default, 10%);
-$border-color-panel: lighten($bgcolor-panel, 5%);
+$bgcolor-panel: lighten($bgcolor-default, 10%)  !default;
+$border-color-panel: lighten($bgcolor-panel, 5%)  !default;
 
+$color-placeholder: lighten($bgcolor-default, 25%) !default;
+
+$color-focus: #a6aa6c !default;
 
 //
 // Media Queries

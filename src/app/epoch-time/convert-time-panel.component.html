@@ -1,0 +1,50 @@
+<div class="epoch-panel-header"><span class="title">Convert Epoch Time</span></div>
+<div class="epoch-panel-body">
+  <div class="epoch-row input-row">
+    <input type="text"
+           placeholder="Enter epoch seconds or date & time"
+           [ngModel]="rawInput"
+           (ngModelChange)="onInputChanged($event)"
+           />
+    <div class="epoch-label">Enter epoch seconds or a valid <a href="https://momentjs.com/docs/#/parsing/string/" target="_blank" class="link">ISO 8601 or RFC 2822 date and time</a>.<BR>Times will be parsed in local time zone unless another offset is specified. Use Z for UTC.</div>
+  </div>
+  <div class="conversion-results" [ngSwitch]="panelState">
+    <div class="epoch-row" *ngSwitchCase="'invalid'"><span class="subtitle">Please enter a valid date and time</span></div>
+    <div class="epoch-row" *ngSwitchCase="'show-epoch'">
+      <input type="text"
+             readonly
+             class="epoch-value"
+             value="{{epochSeconds}}"
+             copyToClipboard
+             [attr.data-clipboard-text]="epochSeconds"
+             title="Click to copy to clipboard!"
+             alt="Click to copy to clipboard!"/>
+      <span class="epoch-label">seconds</span>
+    </div>
+    <ng-container *ngSwitchCase="'show-datetime'">
+      <div class="epoch-row">
+        <input type="text"
+               readonly
+               class="epoch-value"
+               value="{{isoTime}}"
+               copyToClipboard
+               [attr.data-clipboard-text]="isoTime"
+               title="Click to copy to clipboard!"
+               alt="Click to copy to clipboard!"/>
+        <span class="epoch-label">ISO 8601 (UTC)</span>
+      </div>
+      <div class="epoch-row">
+        <input type="text"
+               readonly
+               class="epoch-value"
+               value="{{localDateTime}}"
+               copyToClipboard
+               [attr.data-clipboard-text]="localDateTime"
+               title="Click to copy to clipboard!"
+               alt="Click to copy to clipboard!"/>
+        <span class="epoch-label">local date/time</span>
+      </div>
+    </ng-container>
+  </div>
+
+</div>

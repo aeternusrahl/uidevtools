@@ -1,0 +1,17 @@
+@import "variables";
+
+:host {
+  display: block;
+}
+
+.input-row {
+  .epoch-label {
+    margin-top: $padding-default;
+    padding-left: $padding-default;
+    font-size: 0.8rem;
+  }
+}
+
+.conversion-results {
+  margin-top: 1rem;
+}

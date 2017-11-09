@@ -20,7 +20,7 @@ export class CopyToClipboardDirective implements OnInit, OnDestroy {
       const el = this.element.nativeElement;
       this.renderer.addClass(el, 'clipboard-copied');
       const cancelListen = this.renderer.listen(el, 'animationend', () => {
-        this.renderer.removeClass(this.element.nativeElement, 'clipboard-copied');
+        this.renderer.removeClass(el, 'clipboard-copied');
         cancelListen();
       });
     });

@@ -1,4 +1,7 @@
-<div class="epoch-panel-header"><span class="title">Current Epoch Time</span></div>
+<div class="epoch-panel-header">
+  <span class="title">Current Epoch Time</span>
+  <a #refreshButton href="#" class="fa fa-refresh" (click)="onClickRefresh($event)"></a>
+</div>
 <div class="epoch-panel-body">
   <div class="epoch-row">
     <input type="text"
@@ -31,7 +34,7 @@
            [attr.data-clipboard-text]="isoTime"
            title="Click to copy to clipboard!"
            alt="Click to copy to clipboard!"/>
-    <span class="epoch-label">ISO 8601</span>
+    <span class="epoch-label">ISO 8601 (UTC)</span>
   </div>
   <div class="epoch-row">
     <input type="text"

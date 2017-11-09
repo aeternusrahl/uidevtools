@@ -1,6 +1,9 @@
 @import "~normalize.css/normalize";
 @import "styles/variables";
 
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
+
 
 html {
   -webkit-box-sizing: border-box;
@@ -31,10 +34,18 @@ body {
 }
 
 a {
-  text-decoration: none;
   color: inherit;
 
+  &:not(.link) {
+    text-decoration: none;
+  }
+
   &:hover {
+    background-color: rgba($color-default, 0.2);
+  }
+
+  &:focus {
+    outline: none;
     background-color: rgba($color-default, 0.2);
   }
 }
@@ -70,11 +81,29 @@ input,textarea,select,button {
   width: 100%;
 }
 
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: $color-placeholder;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: $color-placeholder;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: $color-placeholder;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: $color-placeholder;
+}
+
 input,textarea {
   background-color: $bgcolor-default;
   border: 1px solid $border-color-panel;
   @include standard-padding(.5);
   color: lighten($color-default, 10%);
+
+  &:focus {
+    outline: none;
+    border-color: $color-focus;
+  }
 }
 
 

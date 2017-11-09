@@ -8,6 +8,8 @@ import { EpochTimeComponent } from './epoch-time/epoch-time.component';
 import { PageHeaderComponent } from './page-header/page-header.component';
 import { CurrentTimePanelComponent } from './epoch-time/current-time-panel.component';
 import { CopyToClipboardDirective } from './copy-to-clipboard.directive';
+import { ConvertTimePanelComponent } from './epoch-time/convert-time-panel.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,11 +19,13 @@ import { CopyToClipboardDirective } from './copy-to-clipboard.directive';
     EpochTimeComponent,
     PageHeaderComponent,
     CurrentTimePanelComponent,
+    ConvertTimePanelComponent,
     CopyToClipboardDirective
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(AppRoutes)
+    RouterModule.forRoot(AppRoutes),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

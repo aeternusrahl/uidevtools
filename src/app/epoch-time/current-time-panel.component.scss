@@ -1,4 +1,17 @@
+@import "variables";
+
 :host {
   display: block;
 }
 
+.epoch-panel-header > .fa-refresh {
+  float: right;
+  color: $color-title;
+  cursor: pointer;
+
+
+
+  &.time-refreshed {
+    animation: .5s fa-spin;
+  }
+}
