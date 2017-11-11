@@ -100,14 +100,101 @@ input,textarea {
   @include standard-padding(.5);
   color: lighten($color-default, 10%);
 
+  @include transition(
+      border-color 200ms ease-out
+  );
   &:focus {
     outline: none;
     border-color: $color-focus;
   }
 }
 
+button,.button,input[type="button"] {
+  background-color: lighten($bgcolor-default, 13%);
+  border: 1px solid lighten($bgcolor-default, 15%);
+  font-size: 1.1rem;
+  color: $color-title;
+  text-transform: uppercase;
+  @include standard-padding(2);
+  &:not(:last-child) {
+    margin: 0 $padding-default 0 $padding-default;
+  }
+
+  @include transition(
+      background-color 200ms ease-out,
+      border-color 200ms ease-out
+  );
+  &:hover {
+    background-color: lighten($bgcolor-default, 15%);
+    border-color: lighten($bgcolor-default, 17%);
+  }
+  &:active {
+    background-color: lighten($bgcolor-default, 22%);
+  }
+  &:focus {
+    border-color: lighten($color-focus, 0%);
+    outline: none;
+  }
+
+  &[disabled] {
+    color: lighten($bgcolor-default, 20%);
+    pointer-events: none;
+  }
+}
+
+.simple-panel {
+  @include panel;
+  @include standard-padding(1, margin);
+}
+
+.simple-panel-header {
+  background-color: $border-color-panel;
+  @include standard-padding();
+
+  >.title {
+    @include title(1.1rem);
+  }
+
+}
+
+.simple-panel-body {
+  @include standard-padding;
+
+  .panel-row {
+    &:not(:last-child) {
+      margin-bottom: $padding-default * 2;
+    }
+  }
+}
+
+
+
+@keyframes shake-element {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(0.5rem);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(-0.5rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.shake-element {
+  -webkit-animation: .15s shake-element;
+  -o-animation: .15s shake-element;
+  animation: .15s shake-element;
+}
 
 //
 // Shared/global styles
 //
 @import "./app/epoch-time/epoch-time.global";
+

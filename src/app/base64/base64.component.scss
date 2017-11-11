@@ -1,0 +1,26 @@
+@import "variables";
+
+.page-content {
+  @include standard-padding();
+
+  @include medium-up {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &>* {
+      flex-grow: 1;
+    }
+  }
+}
+
+
+.button-row {
+  display: flex;
+}
+
+.text {
+  resize: none;
+  height: 20rem;
+  font-family: Monaco, "Lucida Console", monospace;
+}

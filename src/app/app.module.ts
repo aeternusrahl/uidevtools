@@ -10,6 +10,8 @@ import { CurrentTimePanelComponent } from './epoch-time/current-time-panel.compo
 import { CopyToClipboardDirective } from './copy-to-clipboard.directive';
 import { ConvertTimePanelComponent } from './epoch-time/convert-time-panel.component';
 import { FormsModule } from '@angular/forms';
+import { Base64Component } from './base64/base64.component';
+import { ShakeOnEventDirective } from './shake-on-event.directive';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { FormsModule } from '@angular/forms';
     PageHeaderComponent,
     CurrentTimePanelComponent,
     ConvertTimePanelComponent,
-    CopyToClipboardDirective
+    CopyToClipboardDirective,
+    Base64Component,
+    ShakeOnEventDirective
   ],
   imports: [
     BrowserModule,

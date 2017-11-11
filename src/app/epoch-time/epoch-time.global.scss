@@ -3,27 +3,18 @@
  */
 
 .epoch-panel {
-  @include panel;
-  @include standard-padding(1, margin);
+  @extend .simple-panel;
 }
 
 .epoch-panel-header {
-  background-color: $border-color-panel;
-  @include standard-padding();
-
-  >.title {
-    @include title(1.1rem);
-  }
-
+  @extend .simple-panel-header;
 }
 
 .epoch-panel-body {
-  @include standard-padding;
+  @extend .simple-panel-body;
 
   .epoch-row {
-    &:not(:last-child) {
-      margin-bottom: $padding-default * 2;
-    }
+    @extend .panel-row;
   }
 
   .epoch-value {
