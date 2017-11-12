@@ -12,6 +12,8 @@ import { ConvertTimePanelComponent } from './epoch-time/convert-time-panel.compo
 import { FormsModule } from '@angular/forms';
 import { Base64Component } from './base64/base64.component';
 import { ShakeOnEventDirective } from './shake-on-event.directive';
+import { URLEncodeComponent } from './urlencode/urlencode.component';
+import { AnimateTextUpdateService } from './animate-text-update.service';
 
 
 @NgModule({
@@ -24,14 +26,17 @@ import { ShakeOnEventDirective } from './shake-on-event.directive';
     ConvertTimePanelComponent,
     CopyToClipboardDirective,
     Base64Component,
-    ShakeOnEventDirective
+    ShakeOnEventDirective,
+    URLEncodeComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(AppRoutes),
     FormsModule
   ],
-  providers: [],
+  providers: [
+    AnimateTextUpdateService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

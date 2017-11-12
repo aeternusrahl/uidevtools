@@ -5,10 +5,10 @@ import 'rxjs/add/operator/finally';
 
 
 @Component({
-  templateUrl: './base64.component.html',
-  styleUrls: ['./base64.component.scss']
+  templateUrl: './urlencode.component.html',
+  styleUrls: ['./urlencode.component.scss']
 })
-export class Base64Component {
+export class URLEncodeComponent {
 
   private errorSubject = new Subject<any>();
 
@@ -26,9 +26,7 @@ export class Base64Component {
 
   encode(event: Event): void {
     try {
-      const encodedText = btoa(encodeURIComponent(this.text).replace(/%([0-9A-F]{2})/g, function (match, p1) {
-        return String.fromCharCode(parseInt(p1, 16));
-      }));
+      const encodedText = encodeURIComponent(this.text);
 
       this.replaceText(encodedText);
     }
@@ -42,9 +40,7 @@ export class Base64Component {
 
   decode(event: Event): void {
     try {
-      const decodedText = decodeURIComponent(Array.prototype.map.call(atob(this.text), function (c) {
-        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-      }).join(''));
+      const decodedText = decodeURIComponent(this.text);
 
       this.replaceText(decodedText);
     }

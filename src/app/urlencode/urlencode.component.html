@@ -1,0 +1,15 @@
+<page-header title="URI Encoding"></page-header>
+<div class="page-content">
+  <div class="simple-panel" shakeOnEvent [eventSource]="error$">
+    <div class="simple-panel-header"><span class="title">Encode / Decode URI Component</span></div>
+    <div class="simple-panel-body">
+      <div class="panel-row">
+        <textarea class="text" placeholder="Enter text to encode or decode" [ngModel]="text" (ngModelChange)="onTextChanged($event)"></textarea>
+      </div>
+      <div class="panel-row button-row">
+        <button type="button" (click)="encode($event)" [disabled]="!enableTranscode">Encode</button>
+        <button type="button" (click)="decode($event)" [disabled]="!enableTranscode">Decode</button>
+      </div>
+    </div>
+  </div>
+</div>
