@@ -1,0 +1,20 @@
+<page-header title="JSON"></page-header>
+<div class="page-content">
+  <div class="simple-panel" shakeOnEvent [eventSource]="error$">
+    <div class="simple-panel-header"><span class="title">Format JSON</span></div>
+    <div class="simple-panel-body">
+      <div class="panel-row">
+        <textarea #jsonText class="text" placeholder="Enter JSON string" [ngModel]="text" (ngModelChange)="onTextChanged($event)"></textarea>
+      </div>
+      <div class="panel-row">
+        <input type="radio" name="indentstyle" id="indent2radio" [value]="2" [(ngModel)]="indentSpaces">
+        <label for="indent2radio">Indented</label>
+        <input type="radio" name="indentstyle" id="indent0radio" [value]="0" [(ngModel)]="indentSpaces">
+        <label for="indent0radio">Compact</label>
+      </div>
+      <div class="panel-row button-row">
+        <button type="button" (click)="reformat($event)" [disabled]="!enableFormat">Format</button>
+      </div>
+    </div>
+  </div>
+</div>

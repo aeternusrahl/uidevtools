@@ -87,7 +87,7 @@ h3,.h3 {
 }
 
 
-input,textarea,select,button {
+input[type=text],input[type=button],input[type=submit],textarea,select,button {
   width: 100%;
 }
 
@@ -135,12 +135,12 @@ button,.button,input[type="button"] {
       background-color 200ms ease-out,
       border-color 200ms ease-out
   );
-  &:not([disabled]):hover {
-    background-color: lighten($bgcolor-default, 15%);
-    border-color: lighten($bgcolor-default, 17%);
-  }
   &:active {
     background-color: lighten($bgcolor-default, 22%);
+  }
+  &:not([disabled]):not(:active):hover {
+    background-color: lighten($bgcolor-default, 15%);
+    border-color: lighten($bgcolor-default, 17%);
   }
   &:focus {
     border-color: lighten($color-focus, 0%);
@@ -151,6 +151,54 @@ button,.button,input[type="button"] {
     color: lighten($bgcolor-default, 20%);
   }
 }
+
+$radio-diameter: 1.25rem !default;
+
+input[type=radio] {
+  width: $radio-diameter;
+  position: relative;
+  cursor: pointer;
+
+  &:not(:first-child) {
+    margin-left: $padding-default;
+  }
+}
+
+input[type=radio]::before {
+  content: '';
+  display: inline-block;
+  width: $radio-diameter;
+  height: $radio-diameter;
+  background-color: $bgcolor-default;
+  border: 1px solid $border-color-panel;
+  border-radius: $radio-diameter;
+  margin-top: -$radio-diameter;
+  @include transition(border-color 200ms ease-out);
+}
+input[type=radio]:hover::before {
+  border-color: lighten($border-color-panel, 5%);
+}
+input[type=radio]:focus::before {
+  border-color: $color-focus;
+}
+
+input[type=radio]:checked::after {
+  content: '';
+  display: inline-block;
+  width: $radio-diameter * .6;
+  height: $radio-diameter * .6;
+  border-radius: $radio-diameter * .6;
+  background-color: $color-default;
+  position: absolute;
+  left: $radio-diameter / 5;
+}
+input[type=radio]:hover::after {
+  background-color: lighten($color-default, 5%);
+}
+input[type=radio] + label {
+  cursor: pointer;
+}
+
 
 .simple-panel {
   @include panel;

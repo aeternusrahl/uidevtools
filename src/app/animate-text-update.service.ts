@@ -16,10 +16,9 @@ export class AnimateTextUpdateService {
    */
   updateToTextWithAnimation(newText: string): Observable<string> {
     const randomStrings: string[] = [];
-    const textLength = newText.length;
 
     for (let i = 0; i < 5; i++) {
-      randomStrings.push(this.getRandomString(textLength));
+      randomStrings.push(this.getRandomString(newText));
     }
     randomStrings.push(newText);
 
@@ -29,14 +28,25 @@ export class AnimateTextUpdateService {
       }));
   }
 
-  private getRandomString(length: number): string {
+  private getRandomString(realText: string): string {
     const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\u0a00';
+    const length = realText.length;
     let str = '';
 
     for (let i = 0; i < length ; i++) {
-      str += alphabet[Math.floor(Math.random() * alphabet.length)];
+      const ch = realText[i];
+      if (this.isWhitespace(ch)) {
+        str += ch;
+      }
+      else {
+        str += alphabet[Math.floor(Math.random() * alphabet.length)];
+      }
     }
 
     return str;
+  }
+
+  private isWhitespace(ch): boolean {
+    return ' \t\n\r\v'.indexOf(ch) > -1;
   }
 }

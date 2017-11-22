@@ -3,6 +3,7 @@ import {HomeComponent} from './home/home.component';
 import { EpochTimeComponent } from './epoch-time/epoch-time.component';
 import { Base64Component } from './base64/base64.component';
 import { URLEncodeComponent } from './urlencode/urlencode.component';
+import { JsonComponent } from './json/json.component';
 
 export const AppRoutes: Route[] = [
   {
@@ -20,6 +21,10 @@ export const AppRoutes: Route[] = [
   {
     path: 'uri',
     component: URLEncodeComponent
+  },
+  {
+    path: 'json',
+    component: JsonComponent
   },
   {
     path: '**',

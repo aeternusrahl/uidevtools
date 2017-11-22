@@ -1,0 +1,27 @@
+@import "variables";
+
+// TODO: de-dup this
+.page-content {
+  @include standard-padding();
+
+  @include medium-up {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &>* {
+      flex-grow: 1;
+    }
+  }
+}
+
+
+// TODO: dedup this
+.button-row {
+  display: flex;
+}
+.text {
+  resize: none;
+  min-height: 10rem;
+  font-family: Monaco, "Lucida Console", monospace;
+}

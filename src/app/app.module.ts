@@ -14,6 +14,7 @@ import { Base64Component } from './base64/base64.component';
 import { ShakeOnEventDirective } from './shake-on-event.directive';
 import { URLEncodeComponent } from './urlencode/urlencode.component';
 import { AnimateTextUpdateService } from './animate-text-update.service';
+import { JsonComponent } from './json/json.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { AnimateTextUpdateService } from './animate-text-update.service';
     CopyToClipboardDirective,
     Base64Component,
     ShakeOnEventDirective,
-    URLEncodeComponent
+    URLEncodeComponent,
+    JsonComponent
   ],
   imports: [
     BrowserModule,
