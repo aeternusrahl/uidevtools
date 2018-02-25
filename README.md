@@ -1,7 +1,8 @@
 # Uidevtools
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
-See a live demo [here](http://uitools.aeternusrahl.com)
+
+See a live demo [here](http://uitools.aeternusrahl.com).
 
 ## Development server
 
